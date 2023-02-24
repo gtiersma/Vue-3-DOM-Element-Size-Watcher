@@ -1,6 +1,6 @@
 # Vue 3.0 HTML Element Size Watcher
 
-A TypeScript class dependent on Vue 3.0 that gives reactivity to DOM elements in a simplistic manner. It provides the size of a ref of any element reactively with a very limited performance impact.
+A TypeScript class dependent on Vue 3.0 that gives reactivity to DOM elements in a simplistic manner. It provides the size of a ref of any element reactively with minimal performance impact.
 
 ## Usage Examples
 
@@ -82,6 +82,6 @@ Child component:
 
 - Both margins <ins>and padding</ins> are **not** included in the element's size.
 
-- If the element's size is failing to load (or the size is not being watched), 0 will be returned. This helps to avoid null or undefined exceptions.
+- If the element's size fails to load (or the size is not being watched), 0 will be returned. This helps to avoid null or undefined exceptions.
 
-- To keep the performance impact to a minimum, internally the SizeWatcher uses `setTimeout()` to check the element's size once every 200 milliseconds. This is a major optimization over directly listening to a resize event. However, there is one small negativity involved: If the browser window were to be resized by clicking and dragging the edge of the window, there could be some jittery behavior (depending on how the element's size is used), but the resource usage will remain minimal.
+- To keep the performance impact to a minimum, internally, the SizeWatcher uses `setTimeout()` to check the element's size once every 200 milliseconds. This is a significant optimization over directly listening to a resize event. However, there is one small negativity involved: If the browser window were to be resized by clicking and dragging the edge of the window, there could be some jittery behavior (depending on how the element's size is used). But even in that situation, resource usage by the SizeWatcher should be minimal.
